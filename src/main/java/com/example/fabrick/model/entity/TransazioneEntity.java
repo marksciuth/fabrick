@@ -23,7 +23,7 @@ public class TransazioneEntity {
     @Column(name = "valueDate")
     private Date valueDate;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinTable(
             name = "transazione_tipologia",
             joinColumns = @JoinColumn(name = "id_transazione", nullable = true, referencedColumnName = "id"),
@@ -32,12 +32,12 @@ public class TransazioneEntity {
     private TipologiaEntity type;
 
     @Column(name = "amount")
-    private Number amount;
+    private Double amount;
 
     @Column(length = 45, name = "currency")
     private String currency;
 
-    @Column(length = 45, name = "description")
+    @Column(length = 100, name = "description")
     private String description;
 
 
@@ -81,11 +81,11 @@ public class TransazioneEntity {
         this.type = type;
     }
 
-    public Number getAmount() {
+    public Double getAmount() {
         return amount;
     }
 
-    public void setAmount(Number amount) {
+    public void setAmount(Double amount) {
         this.amount = amount;
     }
 

@@ -16,10 +16,10 @@ public class SaldoEntity {
     private Date date;
 
     @Column(name = "balance")
-    private Number balance;
+    private Double balance;
 
     @Column(name = "available_balance")
-    private Number availableBalance;
+    private Double availableBalance;
 
     @Column(length = 45, name = "currency")
     private String currency;
@@ -32,19 +32,19 @@ public class SaldoEntity {
         this.date = date;
     }
 
-    public Number getBalance() {
+    public Double getBalance() {
         return balance;
     }
 
-    public void setBalance(Number balance) {
+    public void setBalance(Double balance) {
         this.balance = balance;
     }
 
-    public Number getAvailableBalance() {
+    public Double getAvailableBalance() {
         return availableBalance;
     }
 
-    public void setAvailableBalance(Number availableBalance) {
+    public void setAvailableBalance(Double availableBalance) {
         this.availableBalance = availableBalance;
     }
 

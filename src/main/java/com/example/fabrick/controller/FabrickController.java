@@ -238,8 +238,8 @@ public class FabrickController {
 
         SaldoEntity entity = new SaldoEntity();
 
-        entity.setAvailableBalance(saldo.getAvailableBalance());
-        entity.setBalance(saldo.getBalance());
+        entity.setAvailableBalance(saldo.getAvailableBalance().doubleValue());
+        entity.setBalance(saldo.getBalance().doubleValue());
         entity.setCurrency(saldo.getCurrency());
         entity.setDate(new java.sql.Date(saldo.getDate().getTime()) );
 
@@ -256,7 +256,7 @@ public class FabrickController {
             TransazioneEntity entity = new TransazioneEntity();
 
             entity.setAccountingDate(new java.sql.Date(transazione.getAccountingDate().getTime()) );
-            entity.setAmount(transazione.getAmount());
+            entity.setAmount(transazione.getAmount().doubleValue());
             entity.setCurrency(transazione.getCurrency());
             entity.setDescription(transazione.getDescription());
             entity.setOperationId(transazione.getOperationId());
